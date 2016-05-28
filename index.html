@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title>Crytals Collector</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="game.js"></script>
+	<script src="assets/javascript/game.js"></script>
 </head>
 <body>
+<div id="wrapper">
+
 	<div id="header">
 		<h2 id="head">Crystals Collector!</h2>
 	</div>
@@ -21,7 +24,8 @@
 	</div>
 
 	<div id="matchBoard">
-		<div id="match"><h3><span id="guess">Match Me!</span></h3></div>
+		<div id="match"></div>
+		<div id="guess"></div>
 	</div>
 
 	<div id="board">
@@ -33,19 +37,19 @@
 	
 
 	<div id="crystals">
-		<div id="crystal1"><img id="gem1" src="assets/images/gemYellow1.png"></div>
-		<div id="crystal2"><img id="gem2" src="assets/images/gemRed1.png"></div>
-		<div id="crystal3"><img id="gem3" src="assets/images/gemBlue1.png"></div>
-		<div id="crystal4"><img id="gem4" src="assets/images/gemGreen1.png"></div>
+		<div id="crystal1"><img id="gem1" src="assets/images/gemYellow1.png" class="img-responsive"></div>
+		<div id="crystal2"><img id="gem2" src="assets/images/gemRed1.png" class="img-responsive"></div>
+		<div id="crystal3"><img id="gem3" src="assets/images/gemBlue1.png" class="img-responsive"></div>
+		<div id="crystal4"><img id="gem4" src="assets/images/gemGreen1.png" class="img-responsive"></div>
 	</div>
 
 	<div id="scoreBoard"></div>
 
-	<div id="guessBoard"></div>
+	<div id="board2">
+		<div id="guessBoard"></div>
+	</div>
 
-
-
-
+</div>
 
 </body>
 </html>

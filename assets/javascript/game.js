@@ -1,137 +1,91 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-//computer match
 
-	function generateRandom(num){
-	  return Math.floor(Math.random()*num);
-		}
-		var i = 19;
-		var guessElements = document.querySelectorAll("#guess");
-		var guessSelectionValues = [];
-		for (i = 0; i < 1; i++){
-		  guessSelectionValues[i] = generateRandom(120);
-		  guessElements[i].setAttribute("data-value", guessSelectionValues[i]);
-		  guessElements[i].innerHTML = guessSelectionValues[i];
-		}
-		console.log("guessSelectionValues" + guessSelectionValues);
-		var guessTotalCoefficient = [];
-		for (i = 0; i < 1; i++){
-		  guessTotalCoefficient[i] = generateRandom(120);
-		}
-		console.log("guessTotalCoefficient" + guessTotalCoefficient);
-		var guessTotalSum = 0;
-		for (i = 0; i < 1; i++){
-		  guessTotalSum +=
-		 guessSelectionValues[i]*guessTotalCoefficient[i];
+var matchBoard = 0;
+var crystal1 = 0;
+var crystal2 = 0;
+var crystal3 = 0;
+var crystal4 = 0;
+var win = 0;
+var loss = 0;
+var crystalTotal = 0;
+
+
+function randomNumber(min,max){
+    	return Math.floor(Math.random()*(max-min+1)+min);
 		}
 
 
-//crystals
-
-	$("#crystal1").one("click", function(){
-		function generateRandom(num){
-	  return Math.floor(Math.random()*num);
-		}
-		var i = 0;
-		var crystalElements = document.querySelectorAll("#crystal1");
-		var crystalSelectionValues = [];
-		for (i = 0; i < 4; i++){
-		  crystalSelectionValues[i] = generateRandom(12);
-		  crystalElements[i].setAttribute("data-value", crystalSelectionValues[i]);
-		  crystalElements[i].innerHTML = crystalSelectionValues[i];
-		}
-		console.log("crystalSelectionValues" + crystalSelectionValues);
-		var crystalTotalCoefficient = [];
-		for (i = 0; i < 4; i++){
-		  crystalTotalCoefficient[i] = generateRandom(4);
-		}
-		console.log("crystalTotalCoefficient" + crystalTotalCoefficient);
-		var crystalTotalSum = 0;
-		for (i = 0; i < 4; i++){
-		  crystalTotalSum +=
-		 crystalSelectionValues[i]*crystalTotalCoefficient[i];
-		}
-	});
+	function restart(){
+		computerNumber = 0;
+		crystal1 = 0;
+		crystal2 = 0;
+		crystal3 = 0;
+		crystal4 = 0;
+		crystalTotal = 0;
+		$('#guessBoard').text(0);
+		startGame();
+	};
 
 
-	$("#crystal2").one("click", function(){
-		function generateRandom(num){
-	  return Math.floor(Math.random()*num);
-		}
-		var i = 0;
-		var crystalElements = document.querySelectorAll("#crystal2");
-		var crystalSelectionValues = [];
-		for (i = 0; i < 4; i++){
-		  crystalSelectionValues[i] = generateRandom(12);
-		  crystalElements[i].setAttribute("data-value", crystalSelectionValues[i]);
-		  crystalElements[i].innerHTML = crystalSelectionValues[i];
-		}
-		console.log("crystalSelectionValues" + crystalSelectionValues);
-		var crystalTotalCoefficient = [];
-		for (i = 0; i < 4; i++){
-		  crystalTotalCoefficient[i] = generateRandom(4);
-		}
-		console.log("crystalTotalCoefficient" + crystalTotalCoefficient);
-		var crystalTotalSum = 0;
-		for (i = 0; i < 4; i++){
-		  crystalTotalSum +=
-		 crystalSelectionValues[i]*crystalTotalCoefficient[i];
-		}
-	});
+function checkScore() {
+		if (crystalTotal == computerNumber) {
+			win++;
+			$('#win').text(win);
+			restart();
+		}; 
 
-	$("#crystal3").one("click", function(){
-		function generateRandom(num){
-	  return Math.floor(Math.random()*num);
-		}
-		var i = 0;
-		var crystalElements = document.querySelectorAll("#crystal3");
-		var crystalSelectionValues = [];
-		for (i = 0; i < 4; i++){
-		  crystalSelectionValues[i] = generateRandom(12);
-		  crystalElements[i].setAttribute("data-value", crystalSelectionValues[i]);
-		  crystalElements[i].innerHTML = crystalSelectionValues[i];
-		}
-		console.log("crystalSelectionValues" + crystalSelectionValues);
-		var crystalTotalCoefficient = [];
-		for (i = 0; i < 4; i++){
-		  crystalTotalCoefficient[i] = generateRandom(4);
-		}
-		console.log("crystalTotalCoefficient" + crystalTotalCoefficient);
-		var crystalTotalSum = 0;
-		for (i = 0; i < 4; i++){
-		  crystalTotalSum +=
-		 crystalSelectionValues[i]*crystalTotalCoefficient[i];
-		}
-	});
+		if (crystalTotal > computerNumber) {
+			loss++;
+			$('#loss').text(loss);
+			restart();	
+		}; 
+};	
 
-	$("#crystal4").one("click", function(){
-		function generateRandom(num){
-	  return Math.floor(Math.random()*num);
-		}
-		var i = 0;
-		var crystalElements = document.querySelectorAll("#crystal4");
-		var crystalSelectionValues = [];
-		for (i = 0; i < 4; i++){
-		  crystalSelectionValues[i] = generateRandom(12);
-		  crystalElements[i].setAttribute("data-value", crystalSelectionValues[i]);
-		  crystalElements[i].innerHTML = crystalSelectionValues[i];
-		}
-		console.log("crystalSelectionValues" + crystalSelectionValues);
-		var crystalTotalCoefficient = [];
-		for (i = 0; i < 4; i++){
-		  crystalTotalCoefficient[i] = generateRandom(4);
-		}
-		console.log("crystalTotalCoefficient" + crystalTotalCoefficient);
-		var crystalTotalSum = 0;
-		for (i = 0; i < 4; i++){
-		  crystalTotalSum +=
-		 crystalSelectionValues[i]*crystalTotalCoefficient[i];
-		}
-		$(this).effect("bounce", { times:2 }, 300);
-	});
+
+
+
+function startGame(){
 	
+		var num1 = randomNumber(19,120);
+		computerNumber = num1;
+		$('#match').text(computerNumber);
+
+		var num2 = randomNumber(1,12);
+		crystal1 = num2;
+
+		var num3 = randomNumber(1,12);
+		crystal2 = num3;
+
+		var num4 = randomNumber(1,12);
+		crystal3 = num4;
+
+		var num5 = randomNumber(1,12);
+		crystal4 = num5;
+	}
+
+
+		$("#gem1").click(function(){
+		    crystalTotal += crystal1;
+		    $('#guessBoard').text(crystalTotal);
+		    checkScore();
+		}); 
+		$("#gem2").click(function(){
+		    crystalTotal += crystal2;
+		    $('#guessBoard').text(crystalTotal);
+		    checkScore();
+		}); 
+		$("#gem3").click(function(){
+		    crystalTotal += crystal3;
+		    $('#guessBoard').text(crystalTotal);
+		    checkScore();
+		}); 
+		$("#gem4").click(function(){
+		    crystalTotal += crystal4;
+		    $('#guessBoard').text(crystalTotal);
+		    checkScore();
+		}); 
+	
+startGame();
 
 });
-
-
-

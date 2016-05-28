@@ -1,16 +1,19 @@
 body{
 	background-image: url(assets/images/bk3.jpg);
 	background-size: 100%;
+	background-color: #ccd6dd;
 }
 
 #head{
 	text-align: center;
 	color: white;
+	font-family: 'Roboto Slab';
+	font-weight: 700;
 }
 
 #instructions{
 	background-color: black;
-	opacity: .3;
+	opacity: .6;
 }
 	p {
 		text-align: left;
@@ -21,29 +24,34 @@ body{
 	}
 
 #matchBoard{
-	margin: -12px 0 0 570px;
+	border: 1px solid red;
+	margin: 5px auto;
 	color:	#ff0065;
-	font-stretch: condensed;
+	background-color: #F1EBF0;
+	text-align: center;
+	width: 5%;
+	opacity: .7;
+	font-size: 2.5em;
 }
 
 #guess{
-	font-size: 2em;
-	margin-top: 0 auto;
-	padding-top: 0;
+	margin: auto;
 }
 
 #board{
 	border: 1px solid red;
-	margin: -5px 0 0 570px;
+	margin: 5px auto;
 	color:	#ff0065;
 	background-color: white;
-	width: 5%;
 	text-align: center;
+	width: 5%;
+	opacity: .7;
 }
 
 #crystals{
-	margin: 50px 0 0 335px;
-	background-color: white;
+	margin: 50px auto;
+	width: 50%;
+
 }
 		#crystal1{
 			float: left;
@@ -54,9 +62,19 @@ body{
 		}
 
 		#crystal3{
-			float: left;
+			float: right;
 		}
 
 		#crystal4{
-			float: left;
+			float: right;
 		}
+#board2{
+	border: 1px solid red;
+	margin: 5px auto;
+	color:	#ff0065;
+	background-color: white;
+	text-align: center;
+	width: 5%;
+	opacity: .7;
+	font-size: 2.5em;
+}
