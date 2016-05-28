@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crytals Collector</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="game.js"></script>
+</head>
+<body>
+	<div id="header">
+		<h2 id="head">Crystals Collector!</h2>
+	</div>
+
+	<div id="instructions">
+		<p>You will be given a random number at the start of the game.<br>
+		   There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.<br>
+		   You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.<br>
+		   The value of each crytal is hidden from you until you click on it.<br>
+		   Each time when the game starts, the game will change the values of each crystal.</p>
+	</div>
+
+	<div id="matchBoard">
+		<div id="match"><h3><span id="guess">Match Me!</span></h3></div>
+	</div>
+
+	<div id="board">
+		<div id="msg1">Wins:</div>
+		<div id="win">0</div>
+		<div id="msg2">Losses:</div>
+		<div id="loss">0</div>
+	</div>
+	
+
+	<div id="crystals">
+		<div id="crystal1"><img id="gem1" src="assets/images/gemYellow1.png"></div>
+		<div id="crystal2"><img id="gem2" src="assets/images/gemRed1.png"></div>
+		<div id="crystal3"><img id="gem3" src="assets/images/gemBlue1.png"></div>
+		<div id="crystal4"><img id="gem4" src="assets/images/gemGreen1.png"></div>
+	</div>
+
+	<div id="scoreBoard"></div>
+
+	<div id="guessBoard"></div>
+
+
+
+
+
+</body>
+</html>
